@@ -55,7 +55,8 @@ def display_statistics(attempts_list):
 
 def main():
     attempts_list = []
-    while True:
+    condition = True 
+    while condition:
         guessing_game()
         play_again = input("Would you like to play again? (yes/no): ").strip().lower()
         if play_again == "yes":
