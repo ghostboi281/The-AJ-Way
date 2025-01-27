@@ -2,7 +2,11 @@ import random
 
 def guessing_game():
     print("Welcome to the Number Guessing Game!")
-
+  # integer  1,2,3
+  # float 1.0 2.5 3.5
+  # string "this is some text"
+  # boolean True or False
+  
     # Generate a random number between 1 and 100
     number_to_guess = random.randint(1, 100)
     attempts = 0
@@ -55,7 +59,11 @@ def display_statistics(attempts_list):
 
 def main():
     attempts_list = []
+<<<<<<< HEAD
     condition = True 
+=======
+    condition = True
+>>>>>>> 08c5dd6 (python requirement should be met)
     while condition:
         guessing_game()
         play_again = input("Would you like to play again? (yes/no): ").strip().lower()
