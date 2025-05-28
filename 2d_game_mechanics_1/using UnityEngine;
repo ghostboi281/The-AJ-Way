@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class quad : MonoBehaviour
+{
+    // Scroll speed
+    public float scrollingspeed;
+    public bool scrolling;
+
+    // Material for background
+    private Material backaroundMaterial;
+
+    // Example integer array
+    public int[] myintArray;
+
+    private void Awake()
+    {
+        // Get the material from the renderer
+        backaroundMaterial = GetComponent<Renderer>().material;
+    }
+
+    void Start()
+    {
+        Debug.Log("it worked");
+        InitializeArray();
+    }
+
+    private void FixedUpdate()
+    {
+        if (scrolling)
+        {
+            // Apply scrolling offset to material
+            Vector2 offset = new Vector2(scrollingspeed * Time.time, 0);
+            backaroundMaterial.mainTextureOffset = offset;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // You can add frame-by-frame logic here
+    }
+
+    // Initialize and print the array
+    void InitializeArray()
+    {
+        myintArray = new int[] { 1, 2, 3, 4, 5 };
+
+        for (int index = 0; index < myintArray.Length; index++)
+        {
+            Debug.Log(myintArray[index]);
+        }
+    }
+}
